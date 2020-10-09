@@ -48,8 +48,8 @@ def callback():
 #           sendText(user,nameList)
         except Exception:
             sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
-    elif(userText=="ไอ้บ้า"):
-        sendText(user,"ไม่บ้านะ")
+    elif(userText=="ไอ้น่ารัก"):
+        sendText(user,"ไอบ้านะ")
 
     return '',200
 
