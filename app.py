@@ -31,8 +31,8 @@ def callback():
     json_line = request.get_json()
     json_line = json.dumps(json_line)
     decoded = json.loads(json_line)
-#    user = decoded["events"][0]['replyToken']
-#    userText = decoded["events"][0]['message']['text']
+    user = decoded["events"][0]['replyToken']
+    userText = decoded["events"][0]['message']['text']
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
     userAction = decoded['queryResult']['parameters']['studentId']
@@ -42,10 +42,10 @@ def callback():
             for line in f.readlines():
                 a = line.split(",")
                 if(userAction==a[0]):
-#                   nameList=nameList+", "+a[4]
+                    nameList=nameList+", "+a[4]
                     sendText(user,a[4])
             f.close()
-#           sendText(user,nameList)
+            sendText(user,nameList)
         except Exception:
             sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
     elif(userText=="ไอบ้า"):
